@@ -219,12 +219,16 @@ export const BOXERS: Boxer[] = addGetters([
 		},
 		clips: [
 			{
+				text: "Me gusta entrenar y hace tiempo que no entrenaba con un objetivo",
+				url: "https://player.twitch.tv/?enableExtensions=true&muted=false&parent=twitch.tv&player=popout&quality=auto&t=2h57m45s&video=2081166660&volume=0.33",
+			},
+			{
 				text: "Me los bajaré a todos, decir que no sería tener mala actitud",
-				url: "https://youtube.com/clip/UgkxDDiYcrums2e6329f6Zi2MveywHF8R-da?si=Eplk8G484ovrTM0Z",
+				url: "https://player.twitch.tv/?enableExtensions=true&muted=false&parent=twitch.tv&player=popout&quality=auto&t=2h57m54s&video=2081166660&volume=0.33",
 			},
 			{
 				text: "No puedo estar más emocionado por el reto, pero no me voy a flipar",
-				url: "https://youtube.com/clip/Ugkx1VRxwu3liP3LO5E7FxvR97Qy7VHQ-AMy?si=g0Qwd0gm2dhcZL3t",
+				url: "https://player.twitch.tv/?enableExtensions=true&muted=false&parent=twitch.tv&player=popout&quality=auto&t=3h11m39s&video=2081166660&volume=0.33",
 			},
 		],
 		versus: "rey-de-la-pista",
