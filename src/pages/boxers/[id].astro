@@ -87,40 +87,25 @@ const reachBoxer = boxer.reach === undefined ? "Desconocido" : boxer.reach
 	title={`${boxer.name} - Información del boxeador de La Velada IV`}
 	preload={preloadBoxerImage}
 >
-<main class="m-auto w-full">
-	<section class="">
-		<section class="flex w-full flex-wrap items-center justify-center">
+<main>
+	<section class="w-full">
+		<section class="flex flex-wrap items-center justify-center">
 			<div
-				class="relative bottom-20 flex flex-col items-center justify-center md:order-2 md:w-1/2 lg:mx-4"
+				class="relative -mt-20 flex flex-col items-center justify-center md:order-2 md:w-1/2 lg:mx-4"
 			>
 				<BoxerBigImage id={id} name={boxer.name} country={boxer.country} />
 			</div>
-			<div class="max-w-96">
-				{
-					boxer.clips && boxer.clips.length > 0 && (
-						<section class="">
-							<BoxerClips clips={boxer.clips} />
-						</section>
-					)
-				}
-			</div>
-		</section>
-		<section class="mt-20 flex flex-wrap items-center justify-center">
-			<section>
-				<div class="m-5">
-					<Typography as="h1" variant="atomic-title" color="primary">Datos básicos</Typography>
-				</div>
-				<div class="m-auto flex max-w-md flex-wrap items-center justify-center">
+			<div class="mt-20 flex flex-col items-center justify-center">
+				<Typography as="h1" variant="atomic-title" color="primary">Datos básicos</Typography>
+				<div class="m-5 flex flex-wrap">
 					<BoxerDetailInfo title="Edad" value={boxer.age} id="boxer-edad" />
 					<BoxerDetailInfo title="Peso" value={`${boxer.weight} kg.`} id="boxer-peso" />
 					<BoxerDetailInfo title="Altura" value={`${boxer.height} m.`} id="boxer-altura" />
 				</div>
-			</section>
-			<section>
+				<div class="m-5">
+					<Typography as="h1" variant="atomic-title" color="primary">Redes</Typography>
+				</div>
 				<div class="m-auto flex max-w-md flex-col items-center justify-center">
-					<div class="m-5">
-						<Typography as="h1" variant="atomic-title" color="primary">Redes</Typography>
-					</div>
 					<div class="flex w-96 flex-wrap justify-center gap-2 md:max-w-full">
 						<BoxerSocialLink href={boxer.socials.twitch}>
 							<Twitch />
@@ -139,7 +124,7 @@ const reachBoxer = boxer.reach === undefined ? "Desconocido" : boxer.reach
 						</BoxerSocialLink>
 					</div>
 				</div>
-			</section>
+			</div>
 		</section>
 	</section>
 
@@ -152,7 +137,15 @@ const reachBoxer = boxer.reach === undefined ? "Desconocido" : boxer.reach
 			</section>
 		)
 	}
+	{
+		boxer.clips && boxer.clips.length > 0 && (
+			<section class="my-44">
+				<SectionTitle title="Declaraciones" description="Citas previas del combate" />
 
+				<BoxerClips clips={boxer.clips} />
+			</section>
+		)
+	}
 	{forecast && <Forecasts count={forecastCount} boxers={boxersWithForecast} />}
 	<CombatSection combatId={combat.id} combatNumber={combat.number} boxers={boxers} />
 </main>
